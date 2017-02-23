@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Post Template</title>
+
+  <!-- CSS  -->
+  {% load static %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <link href="{% static 'news/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'news/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<script>
+$(document).ready(function(){
+    $("#liberalText").hide();
+    $("#conservativeText").hide();
+
+    $('a[href="#justfacts"]').click(function(){
+        $("#conservativeText").hide();
+        $("#liberalText").hide();   
+    });
+    $('a[href="#conservative"]').click(function(){
+        $("#conservativeText").show();
+        $("#liberalText").hide();
+    });
+    $('a[href="#liberal"]').click(function(){
+        $("#liberalText").show();
+        $("#conservativeText").hide();
+    });
+    
+    $('.button-collapse').sideNav();
+});
+</script>
+</head>
+<body>
+  <nav class="white menu-bar" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="../home.html" class="brand-logo"><font color="grey">Neutral</font><font color="red"> News</font></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="posttemplate.html">Example - Post Template</a></li>
+        <li><a href="#!">Recent</a></li>
+        <li><a href="#!">Popular</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">Conservative</a></li>
+          <li><a href="#!">Liberal</a></li>
+          <li><a href="#!">Socialist</a></li>
+          <li><a href="#!">Libertarian</a></li>
+        </ul>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+          <li><a href="posts/posttemplate.html">Example - Post Template</a></li>
+          <li><a href="#!">Recent</a></li>
+          <li><a href="#!">Popular</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
+          <ul id='dropdown2' class='dropdown-content'>
+            <li><a href="#!">Conservative</a></li>
+            <li><a href="#!">Liberal</a></li>
+            <li><a href="#!">Socialist</a></li>
+            <li><a href="#!">Libertarian</a></li>
+          </ul>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="post-max-width">
+      <div class="section">
+              <h2>Donald Trump Explains Sweden Terror Comment</h2>
+              <img src="{% static 'news/background3.jpg' %}" class="responsive-img">
+              <div class="row">
+                  <div class="col s12">
+                      <ul class="tabs tabs-fixed-width">
+                          <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
+                          <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
+                          <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
+                      </ul>
+                  </div>
+          </div>
+
+              <a href="#" id="truthText" class="col s12 black-text">"We've got to keep our country safe. You look at what's happening in Germany, you look at what's happening last night in Sweden," Trump told the crowd at his campaign-like rally in Florida on Saturday, critiquing Europe's refugee policies and complaining that his travel ban had suffered setbacks in court. "Sweden, who would believe this?"<br><br> It was unclear following the rally what could have occurred in Sweden to draw the president's attention, and the Swedish Embassy asked for clarity.<br><br> Trump used his Twitter account Sunday evening to explain that he was referring to a Tucker Carlson segment that appeared on Fox News Friday. In the segment, Carlson interviewed filmmaker Ami Horowitz, who had recently made a documentary about Sweden's refugee policy.</a>
+              <a href="#" id="conservativeText" class="col s12 materialize-red-text">Some have traced the crime increase in Sweden to a surge in the number of refugees entering from Africa, Asia and the Middle East.  Trump said at a campaign-style rally Saturday outside Melbourne, Fla.: “We’ve got to keep our country safe. You look at what’s happening in Germany, you look at what’s happening last night in Sweden. Sweden, who would believe this?”<br><br>  Trump has made securing the United States from outsiders, particularly radical Islamic terrorists, a major part of presidential campaign and now his administration.  The president's mention of Sweden along with Germany resulted in Trump critics saying he had mistakenly referred to a terror attack.<br><br>  Among the recent terror attacks in Germany was a December 2016 incident in which a terrorist drove a truck through a Christmas market in Berlin, killing 12 people and injuring roughly 50 others. The Islamic State terror group took responsibility for the attack.</a>
+              <a href="#" id="liberalText" class="col s12 indigo-text"> The segment did not contain breaking news.  A spokesperson for the Swedish Embassy said they didn't know if Trump's tweet served as the government's official response to their request for an explanation.<br><br>  "Sweden? Terror attack? What has he been smoking? Questions abound," Carl Bildt, a former Swedish prime minister, wrote on Twitter while he attended the Munich Security Conference on Sunday.  Sweden's Foreign Ministry spokeswoman, Catarina Axelsson, told the Associated Press that the Swedish government did not know of any "terror-linked major incidents."<br><br> Additionally, the Associated Press reported, Sweden's Security Police had not seen any threats or responded to any attacks.  Sweden's U.S. embassy also appeared to take a jab at the president on Twitter Sunday evening, retweeting Trump's earlier justification and saying: "We look forward to informing the US administration about Swedish immigration and integration policies."</a>
+          </div>
+      </div>
+  </div>
+  <footer class="page-footer grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by iamhunter with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>  
+</body>
