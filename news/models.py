@@ -31,8 +31,8 @@ class Opinion(models.Model):
 class Article(models.Model):
     author = models.ManyToManyField(Author)
     pub_date = models.DateTimeField('date published')
-    title = models.ManyToManyField(Title)
-    truth = models.ManyToManyField(Truth)
+    title = models.ForeignKey(Title, on_delete=models.CASCADE)
+    truth = models.ForeignKey(Truth, on_delete=models.CASCADE)
     opinion = models.ManyToManyField(Opinion)
     
     def __str__(self):
