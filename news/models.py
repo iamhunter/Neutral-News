@@ -30,10 +30,11 @@ class Opinion(models.Model):
     
 class Article(models.Model):
     author = models.ManyToManyField(Author)
-    pub_date = models.DateTimeField('date published')
-    title = models.ForeignKey(Title, on_delete=models.CASCADE)
+    title_text = models.CharField(max_length=500)
+    slug = models.SlugField(max_length=100, unique=True)
     truth = models.ForeignKey(Truth, on_delete=models.CASCADE)
     opinion = models.ManyToManyField(Opinion)
-    
+    pub_date = models.DateTimeField('date published')
+
     def __str__(self):
         return self.title_text

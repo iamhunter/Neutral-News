@@ -40,7 +40,7 @@ $(document).ready(function(){
       <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><font color="grey">Neutral</font><font color="red"> News</font></a>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{% url 'post' %}">Example - Post Template</a></li>
+        <li><a href="/post/{{ slug }}/">Example - Post Template</a></li>
         <li><a href="#!">Recent</a></li>
         <li><a href="#!">Popular</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -53,7 +53,7 @@ $(document).ready(function(){
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-          <li><a href="{% url 'post' %}">Example - Post Template</a></li>
+          <li><a href="/post/{{ slug }}/">Example - Post Template</a></li>
           <li><a href="#!">Recent</a></li>
           <li><a href="#!">Popular</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
