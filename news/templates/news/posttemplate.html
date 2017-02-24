@@ -16,7 +16,6 @@
 $(document).ready(function(){
     $("#liberalText").hide();
     $("#conservativeText").hide();
-
     $('a[href="#justfacts"]').click(function(){
         $("#conservativeText").hide();
         $("#liberalText").hide();   
@@ -29,7 +28,6 @@ $(document).ready(function(){
         $("#liberalText").show();
         $("#conservativeText").hide();
     });
-    
     $('.button-collapse').sideNav();
 });
 </script>
@@ -51,7 +49,6 @@ $(document).ready(function(){
           <li><a href="#!">Libertarian</a></li>
         </ul>
       </ul>
-
       <ul id="nav-mobile" class="side-nav">
           <li><a href="/post/{{ slug }}/">Example - Post Template</a></li>
           <li><a href="#!">Recent</a></li>
@@ -66,10 +63,9 @@ $(document).ready(function(){
       </ul>
     </div>
   </nav>
-  
   <div class="post-max-width">
       <div class="section">
-              <h2>Donald Trump Explains Sweden Terror Comment</h2>
+              <h2>{{ article.title_text }}</h2>
               <img src="{% static 'news/background3.jpg' %}" class="responsive-img">
               <div class="row">
                   <div class="col s12">
@@ -80,8 +76,7 @@ $(document).ready(function(){
                       </ul>
                   </div>
           </div>
-
-              <a href="#" id="truthText" class="col s12 black-text">"We've got to keep our country safe. You look at what's happening in Germany, you look at what's happening last night in Sweden," Trump told the crowd at his campaign-like rally in Florida on Saturday, critiquing Europe's refugee policies and complaining that his travel ban had suffered setbacks in court. "Sweden, who would believe this?"<br><br> It was unclear following the rally what could have occurred in Sweden to draw the president's attention, and the Swedish Embassy asked for clarity.<br><br> Trump used his Twitter account Sunday evening to explain that he was referring to a Tucker Carlson segment that appeared on Fox News Friday. In the segment, Carlson interviewed filmmaker Ami Horowitz, who had recently made a documentary about Sweden's refugee policy.</a>
+              <a href="#" id="truthText" class="col s12 black-text">{{ article.truth }}</a>
               <a href="#" id="conservativeText" class="col s12 materialize-red-text">Some have traced the crime increase in Sweden to a surge in the number of refugees entering from Africa, Asia and the Middle East.  Trump said at a campaign-style rally Saturday outside Melbourne, Fla.: “We’ve got to keep our country safe. You look at what’s happening in Germany, you look at what’s happening last night in Sweden. Sweden, who would believe this?”<br><br>  Trump has made securing the United States from outsiders, particularly radical Islamic terrorists, a major part of presidential campaign and now his administration.  The president's mention of Sweden along with Germany resulted in Trump critics saying he had mistakenly referred to a terror attack.<br><br>  Among the recent terror attacks in Germany was a December 2016 incident in which a terrorist drove a truck through a Christmas market in Berlin, killing 12 people and injuring roughly 50 others. The Islamic State terror group took responsibility for the attack.</a>
               <a href="#" id="liberalText" class="col s12 indigo-text"> The segment did not contain breaking news.  A spokesperson for the Swedish Embassy said they didn't know if Trump's tweet served as the government's official response to their request for an explanation.<br><br>  "Sweden? Terror attack? What has he been smoking? Questions abound," Carl Bildt, a former Swedish prime minister, wrote on Twitter while he attended the Munich Security Conference on Sunday.  Sweden's Foreign Ministry spokeswoman, Catarina Axelsson, told the Associated Press that the Swedish government did not know of any "terror-linked major incidents."<br><br> Additionally, the Associated Press reported, Sweden's Security Police had not seen any threats or responded to any attacks.  Sweden's U.S. embassy also appeared to take a jab at the president on Twitter Sunday evening, retweeting Trump's earlier justification and saying: "We look forward to informing the US administration about Swedish immigration and integration policies."</a>
           </div>
@@ -93,8 +88,6 @@ $(document).ready(function(){
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
