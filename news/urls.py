@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^post/$', views.post, name='post'),
+    url(r'^post/(?P<slug>[\w-]+)/$', views.post, name='post'),
 ]
