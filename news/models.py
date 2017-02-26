@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils import timezone
+import datetime
 
 # Create your models here.
 class Author(models.Model):
@@ -38,3 +40,10 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title_text
+        
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+        
