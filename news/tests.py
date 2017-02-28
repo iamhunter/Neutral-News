@@ -3,8 +3,9 @@ import datetime
 from django.utils import timezone
 from django.test import TestCase
 from django.urls import reverse
+from .models import *
 
-from .models import Article
+
 
 def create_article(title_text, days):
     """
@@ -15,9 +16,7 @@ def create_article(title_text, days):
     time = timezone.now() + datetime.timedelta(days=days)
     return Article.objects.create(title_text=title_text, pub_date=time)
 
-
-
-class ArticleMethodTests(TestCase):
+class ModelTests(TestCase):
     def test_was_published_recently_with_future_article(self):
         """
         was_published_recently() should return False for articles whose
@@ -44,91 +43,41 @@ class ArticleMethodTests(TestCase):
         time = timezone.now() - datetime.timedelta(hours=1)
         recent_article = Article(pub_date=time)
         self.assertIs(recent_article.was_published_recently(), True)
+        
+    def test_title_str(self):
+        """
+        Creates a title
+        """
+        title = Title(title_text="title text")
+        self.assertIs(title.__str__(), "title text")
+        
+    def test_truth_str(self):
+        """
+        Creates a truth
+        """
+        truth = Truth(truth_text="truth text")
+        self.assertIs(truth.__str__(), "truth text")
+        
+    def test_opinion_str(self):
+        """
+        Creates a opinion
+        """
+        opinion = Opinion(opinion_text="opinion text")
+        self.assertIs(opinion.__str__(), "opinion text")
+        
+    def test_article_str(self):
+        """
+        Creates a article
+        """
+        article = Article(title_text="article text")
+        self.assertIs(article.__str__(), "article text")
+        
+    def test_author_str(self):
+        """
+        Creates a author
+        """
+        author = Author(first_name="firstname", last_name="lastname")
+        self.assertIs(author.__str__(), "firstname")
 
-    def create_article(title_text, days):
-        """
-        Creates a article with the given `title_text` and published the
-        given number of `days` offset to now (negative for articles published
-        in the past, positive for articles that have yet to be published).
-        """
-        time = timezone.now() + datetime.timedelta(days=days)
-        return Article.objects.create(title_text=title_text, pub_date=time)
-
-
-class ArticleViewTests(TestCase):
-    def test_index_view_with_no_articles(self):
-        """
-        If no articles exist, an appropriate message should be displayed.
-        """
-        response = self.client.get(reverse('news:indexview'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "No news is available.")
-        self.assertQuerysetEqual(response.context['latest_article_list'], [])
-
-    def test_index_view_with_a_past_article(self):
-        """
-        Articles with a pub_date in the past should be displayed on the
-        index page.
-        """
-        create_article(title_text="Past article.", days=-30)
-        response = self.client.get(reverse('news:indexview'))
-        self.assertQuerysetEqual(
-            response.context['latest_article_list'],
-            ['<Article: Past article.>']
-        )
-
-#    def test_index_view_with_a_future_article(self):
-#        """
-#        Articles with a pub_date in the future should not be displayed on
-#        the index page.
-#        """
-#        create_article(title_text="Future article.", days=30)
-#        response = self.client.get(reverse('news:index'))
-#        self.assertContains(response, "No news is available.")
-#        self.assertQuerysetEqual(response.context['latest_article_list'], [])
-#
-#    def test_index_view_with_future_article_and_past_article(self):
-#        """
-#        Even if both past and future articles exist, only past articles
-#        should be displayed.
-#        """
-#        create_article(title_text="Past article.", days=-30)
-#        create_article(title_text="Future article.", days=30)
-#        response = self.client.get(reverse('news:index'))
-#        self.assertQuerysetEqual(
-#            response.context['latest_article_list'],
-#            ['<Article: Past article.>']
-#        )
-#
-#    def test_index_view_with_two_past_articles(self):
-#        """
-#        The articles index page may display multiple articles.
-#        """
-#        create_article(title_text="Past article 1.", days=-30)
-#        create_article(title_text="Past article 2.", days=-5)
-#        response = self.client.get(reverse('news:index'))
-#        self.assertQuerysetEqual(
-#            response.context['latest_article_list'],
-#            ['<Article: Past article 2.>', '<Article: Past article 1.>']
-#        )
-#
-#class ArticleIndexDetailTests(TestCase):
-#    def test_detail_view_with_a_future_article(self):
-#        """
-#        The detail view of a article with a pub_date in the future should
-#        return a 404 not found.
-#        """
-#        future_article = create_article(title_text='Future article.', days=5)
-#        url = reverse('news:detail', args=(future_article.id,))
-#        response = self.client.get(url)
-#        self.assertEqual(response.status_code, 404)
-#
-#    def test_detail_view_with_a_past_article(self):
-#        """
-#        The detail view of a article with a pub_date in the past should
-#        display the article's text.
-#        """
-#        past_article = create_article(title_text='Past Article.', days=-5)
-#        url = reverse('news:detail', args=(past_article.id,))
-#        response = self.client.get(url)
-#        self.assertContains(response, past_article.title_text)
+        
+        
