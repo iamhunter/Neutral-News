@@ -17,6 +17,6 @@ env:
 install:
 - pip install -q Django==$DJANGO_VERSION
 
-script: 
-- python manage.py test
-- codecov
+script: python manage.py test
+
+after_success: codecov
