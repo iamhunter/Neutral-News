@@ -1,3 +1,6 @@
+
+# Created by https://www.gitignore.io/api/django
+
 ### Django ###
 *.log
 *.pot
@@ -7,3 +10,5 @@ local_settings.py
 db.sqlite3
 media
 .coverage
+
+# End of https://www.gitignore.io/api/django
