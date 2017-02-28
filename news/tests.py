@@ -1,8 +1,10 @@
 import datetime
+import unittest
 
 from django.utils import timezone
 from django.test import TestCase
 from django.urls import reverse
+from django.test import Client
 from .models import *
 
 class ModelTests(TestCase):
@@ -67,6 +69,17 @@ class ModelTests(TestCase):
         """
         author = Author(first_name="firstname", last_name="lastname")
         self.assertIs(author.__str__(), "firstname")
+        
+class ViewTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        
+    def test_index_view(self):
+        """
+        Tests the index
+        """
+        index_view = self.client.get('news')
+        self.assertEqual(index_view.status_code, 200)
 
         
         

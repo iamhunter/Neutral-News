@@ -12,3 +12,5 @@ media
 .coverage
 
 # End of https://www.gitignore.io/api/django
+
+.coverage
