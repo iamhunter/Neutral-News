@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils import timezone
+import datetime
 
 # Create your models here.
 class Author(models.Model):
@@ -8,7 +10,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=30)
     
     def __str__(self):
-        return '%s %s' % (self.first_name, self.last_name)
+        return self.first_name
     
 class Title(models.Model):
     title_text = models.CharField(max_length=500)
@@ -38,3 +40,10 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title_text
+        
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+        
