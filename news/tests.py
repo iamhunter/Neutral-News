@@ -1,20 +1,11 @@
 import datetime
+import unittest
 
 from django.utils import timezone
 from django.test import TestCase
 from django.urls import reverse
+from django.test import Client
 from .models import *
-
-
-
-def create_article(title_text, days):
-    """
-    Creates a article with the given `title_text` and published the
-    given number of `days` offset to now (negative for articles published
-    in the past, positive for articles that have yet to be published).
-    """
-    time = timezone.now() + datetime.timedelta(days=days)
-    return Article.objects.create(title_text=title_text, pub_date=time)
 
 class ModelTests(TestCase):
     def test_was_published_recently_with_future_article(self):
@@ -78,6 +69,17 @@ class ModelTests(TestCase):
         """
         author = Author(first_name="firstname", last_name="lastname")
         self.assertIs(author.__str__(), "firstname")
+        
+class ViewTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        
+    def test_index_view(self):
+        """
+        Tests the index
+        """
+        index_view = self.client.get('')
+        self.assertEqual(index_view.status_code, 200)
 
         
         
