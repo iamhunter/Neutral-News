@@ -20,7 +20,7 @@ install:
 
 script: 
     - python manage.py test
-    - coverage run tests.py
+    - coverage run --source='.' manage.py test news
 
 after_success: 
     - codecov
