@@ -80,6 +80,15 @@ class ViewTests(TestCase):
         """
         index_view = self.client.get('')
         self.assertEqual(index_view.status_code, 200)
+        
+    def test_post_view(self):
+        """
+        Tests Post view. should return a 404
+        """
+        article = Article(title_text="article text", slug='s')
+        url = reverse("post", args='s')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
 
         
         
