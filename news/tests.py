@@ -78,7 +78,7 @@ class ViewTests(TestCase):
         """
         Tests the index
         """
-        index_view = self.client.get('news')
+        index_view = self.client.get('')
         self.assertEqual(index_view.status_code, 200)
 
         
