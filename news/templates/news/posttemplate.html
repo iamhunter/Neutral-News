@@ -65,6 +65,12 @@ $(document).ready(function(){
       <div class="section">
               <h2>{{ article.title_text }}</h2>
               <img src="{{ article.image.url }}" class="responsive-img">
+              <div class="chip">
+                  {{ article.conservative_author }}
+              </div>
+              <div class="chip">
+                  {{ article.liberal_author }}
+              </div>
               <div class="row">
                   <div class="col s12">
                       <ul class="tabs tabs-fixed-width">
