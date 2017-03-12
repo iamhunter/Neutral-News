@@ -37,11 +37,24 @@ class ModelTests(TestCase):
         
     def test_article_str(self):
         """
-        Creates a article
+        Creates an article
         """
         article = Article(title_text="article text")
         self.assertIs(article.__str__(), "article text")
         
+    def test_conservativeauthor_str(self):
+        """
+        Creates a conservative author
+        """
+        conservative = ConservativeAuthor(first_name="first", last_name="last")
+        self.assertIsNotNone(conservative.__str__())
+    
+    def test_liberalauthor_str(self):
+        """
+        Creates a liberal author
+        """
+        liberal = LiberalAuthor(first_name="first", last_name="last")
+        self.assertIsNotNone(liberal.__str__())    
 class ViewTests(TestCase):
     def setUp(self):
         self.client = Client()
