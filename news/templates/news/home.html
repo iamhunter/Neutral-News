@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
 </head>
 <body>
   <nav class="white menu-bar" role="navigation">
@@ -58,30 +59,27 @@
     <div class="parallax"><img src="{% static 'news/images/background1.jpg' %}" alt="Unsplashed background img 1"></div>
   </div>
 
-  <div class="post-max-width">
-          <div class="section container">
-              <div class="row">
-                  <div class="col s12 m6">
-                    {% for Article in article_list %}
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="{{ Article.image.url }}">
-                        <span class="card-title">{{ Article.title_text }}</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                      </div>
-                      <div class="card-content">
-                        <p>{{ Article.truth }}</p>
-                      </div>
-                    </div>
-                    {% endfor %}
+  <div class="section container">
+      <div class="row">
+            {% for Article in article_list %}
+            <div class="col s6">
+                <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{ Article.image.url }}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ Article.title_text }}<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#">This is a link</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                    <p>{{ Article.truth }}</p>
                   </div>
                 </div>
-          </div>
-      </div>
-
-
-
-
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
   <footer class="page-footer grey">
     <div class="container">
