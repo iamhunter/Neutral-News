@@ -21,6 +21,7 @@ class LiberalAuthor(models.Model):
     
 class Article(models.Model):
     title_text = models.CharField(max_length=500)
+    image = models.ImageField()
     conservative_author = models.ForeignKey(ConservativeAuthor, on_delete=models.CASCADE)
     liberal_author = models.ForeignKey(LiberalAuthor, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)

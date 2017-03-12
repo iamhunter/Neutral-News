@@ -64,7 +64,7 @@ $(document).ready(function(){
   <div class="post-max-width">
       <div class="section">
               <h2>{{ article.title_text }}</h2>
-              <img src="{% static 'news/images/background3.jpg' %}" class="responsive-img">
+              <img src="{{ article.image.url }}" class="responsive-img">
               <div class="row">
                   <div class="col s12">
                       <ul class="tabs tabs-fixed-width">

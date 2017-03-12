@@ -12,3 +12,4 @@ media
 .coverage
 
 # End of https://www.gitignore.io/api/django
+news/uploads/background1.jpg
