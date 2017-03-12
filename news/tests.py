@@ -35,40 +35,12 @@ class ModelTests(TestCase):
         recent_article = Article(pub_date=time)
         self.assertIs(recent_article.was_published_recently(), True)
         
-    def test_title_str(self):
-        """
-        Creates a title
-        """
-        title = Title(title_text="title text")
-        self.assertIs(title.__str__(), "title text")
-        
-    def test_truth_str(self):
-        """
-        Creates a truth
-        """
-        truth = Truth(truth_text="truth text")
-        self.assertIs(truth.__str__(), "truth text")
-        
-    def test_opinion_str(self):
-        """
-        Creates a opinion
-        """
-        opinion = Opinion(opinion_text="opinion text")
-        self.assertIs(opinion.__str__(), "opinion text")
-        
     def test_article_str(self):
         """
         Creates a article
         """
         article = Article(title_text="article text")
         self.assertIs(article.__str__(), "article text")
-        
-    def test_author_str(self):
-        """
-        Creates a author
-        """
-        author = Author(first_name="firstname", last_name="lastname")
-        self.assertIs(author.__str__(), "firstname")
         
 class ViewTests(TestCase):
     def setUp(self):

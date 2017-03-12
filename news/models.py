@@ -5,37 +5,29 @@ from django.utils import timezone
 import datetime
 
 # Create your models here.
-class Author(models.Model):
+class ConservativeAuthor(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     
     def __str__(self):
-        return self.first_name
-    
-class Title(models.Model):
-    title_text = models.CharField(max_length=500)
-    
-    def __str__(self):
-        return self.title_text
-    
-class Truth(models.Model):
-    truth_text = models.TextField()
+        return "%s %s" % (self.first_name, self.last_name)
+        
+class LiberalAuthor(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     
     def __str__(self):
-        return self.truth_text
-    
-class Opinion(models.Model):
-    opinion_text = models.TextField()
-    
-    def __str__(self):
-        return self.opinion_text
+        return "%s %s" % (self.first_name, self.last_name)
     
 class Article(models.Model):
-    author = models.ManyToManyField(Author)
     title_text = models.CharField(max_length=500)
+    image = models.ImageField()
+    conservative_author = models.ForeignKey(ConservativeAuthor, on_delete=models.CASCADE)
+    liberal_author = models.ForeignKey(LiberalAuthor, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
-    truth = models.ForeignKey(Truth, on_delete=models.CASCADE)
-    opinion = models.ManyToManyField(Opinion)
+    truth = models.TextField()
+    conservative_opinion = models.TextField()
+    liberal_opinion = models.TextField()
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
