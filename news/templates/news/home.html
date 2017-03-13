@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Neutral News</title>
   <!-- CSS  -->
-  {% load static %}
+  {% load static from staticfiles %}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -75,6 +75,10 @@
                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
                     <p>{{ Article.truth }}</p>
                   </div>
+                  <div class="card-action">
+                      <a href="#">This is a link</a>
+                      <a href="#">This is a link</a>
+                    </div>
                 </div>
             </div>
             {% endfor %}
