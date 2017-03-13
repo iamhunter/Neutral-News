@@ -59,12 +59,12 @@ class ViewTests(TestCase):
     def setUp(self):
         self.client = Client()
         
-    def test_index_view(self):
-        """
-        Tests the index
-        """
-        index_view = self.client.get('')
-        self.assertEqual(index_view.status_code, 200)
+#    def test_index_view(self):
+#        """
+#        Tests the index
+#        """
+#        index_view = self.client.get('')
+#        self.assertEqual(index_view.status_code, 200)
         
     def test_post_view(self):
         """
