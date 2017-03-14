@@ -138,7 +138,7 @@ STATICFILES_DIRS = (
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['S3_BUCKET_NAME']
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
 MEDIA_ROOT = ''
 
 import dj_database_url
