@@ -80,9 +80,9 @@ $(document).ready(function(){
                       </ul>
                   </div>
           </div>
-              <a id="truthText" class="col s12 black-text">{{ article.truth }}</a>
-              <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion }}</a>
-              <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion}} </a>
+              <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
+              <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
+              <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
           </div>
       </div>
   </div>
