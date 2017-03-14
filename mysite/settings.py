@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -136,11 +137,12 @@ STATICFILES_DIRS = (
     os.path.join('news/static'),
 )
 
+AWS_STORAGE_BUCKET_NAME = 'neutralnews'
 
 
-
-MEDIA_ROOT = 'news/uploads/'
-MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
+MEDIA_ROOT = ''
 
 import dj_database_url
 import os
