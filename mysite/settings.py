@@ -139,6 +139,7 @@ STATICFILES_DIRS = (
 
 AWS_STORAGE_BUCKET_NAME = 'neutralnews'
 
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
 MEDIA_ROOT = ''
