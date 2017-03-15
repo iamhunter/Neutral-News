@@ -5,7 +5,8 @@
   "env": {
     "INHERIT_THIS_CONFIG_VAR": {
     "AWS_STORAGE_BUCKET_NAME": true
-    }
+    },
+    "DONT_INHERIT_THIS_CONFIG_VAR": "production"
   },
   "formation": {
   },
