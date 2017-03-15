@@ -3,6 +3,9 @@
   "scripts": {
   },
   "env": {
+    "AWS_STORAGE_BUCKET_NAME": {
+    "required": true
+    }
   },
   "formation": {
   },
