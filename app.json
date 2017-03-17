@@ -1,6 +1,7 @@
 {
   "name": "Neutral-News",
   "scripts": {
+      "python manage.py migrate"
   },
   "env": {
     "AWS_STORAGE_BUCKET_NAME": {
