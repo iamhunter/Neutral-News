@@ -1,140 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Neutral News</title>
-  <!-- CSS  -->
-  {% load static from staticfiles %}
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="{% static 'news/js/masonry.pkgd.js' %}"></script>
-<script>
-// jQuery
-$('.grid').masonry({
-  columnWidth: 160,
-  stagger: 30,
-  itemSelector: '.grid-item'
-});
-</script>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Neutral News</title>
+    <!-- CSS  -->
+    {% load static from staticfiles %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'news/js/materialize.js' %}"></script>
+    <script src="{% static 'news/js/init.js' %}"></script>
 </head>
 <body>
-  <nav class="white menu-bar" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><font color="grey">Neutral</font><font color="red"> News</font></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/post/test/">Example - Post Template</a></li>
-        <li><a href="{% url 'admin:index' %}">Admin</a></li>
-        <li><a href="#!">Popular</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#!">Conservative</a></li>
-          <li><a href="#!">Liberal</a></li>
-          <li><a href="#!">Socialist</a></li>
-          <li><a href="#!">Libertarian</a></li>
-        </ul>
-      </ul>
-      <ul id="nav-mobile" class="side-nav">
-          <li><a href="/post/test/">Example - Post Template</a></li>
-          <li><a href="{% url 'admin:index' %}">Admin</a></li>
-          <li><a href="#!">Popular</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
-          <ul id='dropdown2' class='dropdown-content'>
-            <li><a href="#!">Conservative</a></li>
-            <li><a href="#!">Liberal</a></li>
-            <li><a href="#!">Socialist</a></li>
-            <li><a href="#!">Libertarian</a></li>
-          </ul>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center materialize-red">Un-Biased News</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Just Kidding. That's impossible. But this is the next best thing.</h5>
+    <nav class="white menu-bar" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><font color="grey">Neutral</font><font color="red"> News</font></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/post/test/">Example - Post Template</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="#!">Popular</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">Conservative</a></li>
+                    <li><a href="#!">Liberal</a></li>
+                    <li><a href="#!">Socialist</a></li>
+                    <li><a href="#!">Libertarian</a></li>
+                </ul>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="/post/test/">Example - Post Template</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="#!">Popular</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
+                <ul id='dropdown2' class='dropdown-content'>
+                    <li><a href="#!">Conservative</a></li>
+                    <li><a href="#!">Liberal</a></li>
+                    <li><a href="#!">Socialist</a></li>
+                    <li><a href="#!">Libertarian</a></li>
+                </ul>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
-        <div class="row center">
-          <a href="/post/test" id="download-button" class="btn waves-effect waves-light grey" >Get Started</a>
+    </nav>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center materialize-red">Un-Biased News</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Just Kidding. That's impossible. But this is the next best thing.</h5>
+                </div>
+                <div class="row center">
+                    <a href="/post/test" id="download-button" class="btn waves-effect waves-light grey" >Get Started</a>
+                </div>
+                <br><br>
+            </div>
         </div>
-        <br><br>
-      </div>
+        <div class="parallax"><img src="{% static 'news/images/background1.jpg' %}" alt="Unsplashed background img 1"></div>
     </div>
-    <div class="parallax"><img src="{% static 'news/images/background1.jpg' %}" alt="Unsplashed background img 1"></div>
-  </div>
-
-  <div class="section container">
-      <div class="row">
-          <div class="grid">
+    
+    <div class="section container">
+        <div class="row">
             {% for Article in article_list %}
-            <div class="col s6 grid-item">
+            <div class="col">
                 <div class="card ">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{{ Article.image.url }}">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{ Article.title_text }}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>{{ Article.truth | safe }}</p>
-                  </div>
-                  <div class="card-action">
-                      <a href="#">This is a link</a>
-                      <a href="#">This is a link</a>
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ Article.image.url }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{ Article.title_text }}<i class="material-icons right">playlist_add</i></span>
+                        <p><a href="post/{{ Article.slug }}">Go To Article</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>{{ Article.truth | safe }}</p>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-        </div>
     </div>
-
-  <footer class="page-footer grey">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+    
+    <footer class="page-footer grey">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by iamhunter with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by iamhunter with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+    
+    
+</body>
 
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{% static 'news/js/materialize.js' %}"></script>
-  <script src="{% static 'news/js/init.js' %}"></script>
-
-  </body>
 </html>
