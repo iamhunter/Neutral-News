@@ -11,6 +11,7 @@
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="{% static 'news/js/masonry.pkgd.js' %}"></script>
 <script>
+// jQuery
 $('.grid').masonry({
   columnWidth: 160,
   stagger: 30,
@@ -72,7 +73,7 @@ $('.grid').masonry({
           <div class="grid">
             {% for Article in article_list %}
             <div class="col s6 grid-item">
-                <div class="card">
+                <div class="card ">
                   <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="{{ Article.image.url }}">
                   </div>
