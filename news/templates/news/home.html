@@ -9,15 +9,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="{% static 'news/js/masonry.pkgd.js' %}"></script>
-<script>
-// jQuery
-$('.grid').masonry({
-  columnWidth: 160,
-  stagger: 30,
-  itemSelector: '.grid-item'
-});
-</script>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'news/js/materialize.js' %}"></script>
+  <script src="{% static 'news/js/init.js' %}"></script>
 
 </head>
 <body>
@@ -70,31 +65,26 @@ $('.grid').masonry({
 
   <div class="section container">
       <div class="row">
-          <div class="grid">
             {% for Article in article_list %}
-            <div class="col s6 grid-item">
+            <div class="col">
                 <div class="card ">
                   <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="{{ Article.image.url }}">
                   </div>
                   <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{ Article.title_text }}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
+                    <span class="card-title activator grey-text text-darken-4">{{ Article.title_text }}<i class="material-icons right">playlist_add</i></span>
+                    <p><a href="post/{{ Article.slug }}">Go To Article</a></p>
                   </div>
                   <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
                     <p>{{ Article.truth | safe }}</p>
                   </div>
-                  <div class="card-action">
-                      <a href="#">This is a link</a>
-                      <a href="#">This is a link</a>
-                    </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
         </div>
     </div>
+</div>
 
   <footer class="page-footer grey">
     <div class="container">
@@ -129,12 +119,6 @@ $('.grid').masonry({
       </div>
     </div>
   </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{% static 'news/js/materialize.js' %}"></script>
-  <script src="{% static 'news/js/init.js' %}"></script>
 
   </body>
 </html>
