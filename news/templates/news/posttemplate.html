@@ -62,29 +62,27 @@
             </ul>
         </div>
     </nav>
-    <div class="post-max-width">
-        <div class="section">
-            <h2>{{ article.title_text }}</h2>
-            <img src="{{ article.image.url }}" class="responsive-img">
-            <div class="chip">
-                {{ article.conservative_author }}
-            </div>
-            <div class="chip">
-                {{ article.liberal_author }}
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
-                        <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
-                        <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
-            <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
-            <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
+    <div class="section container">
+        <h2>{{ article.title_text }}</h2>
+        <img src="{{ article.image.url }}" class="responsive-img">
+        <div class="chip">
+            {{ article.conservative_author }}
         </div>
+        <div class="chip">
+            {{ article.liberal_author }}
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
+                    <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
+                    <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
+                </ul>
+            </div>
+        </div>
+        <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
+        <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
+        <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
     </div>
 </div>
 <footer class="page-footer grey">
