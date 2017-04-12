@@ -7,7 +7,7 @@
     <!-- CSS  -->
     {% load static from staticfiles %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
     <!--  Scripts-->
@@ -21,13 +21,13 @@
 <body>
     
     <div class="head">
-    <div class="headerobjectswrapper">
-        <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
-        <header>Neutral News</header>
-    </div>
+        <div class="headerobjectswrapper">
+            <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
+            <header><a href="{% url 'index' %}">Neutral News</a></header>
+        </div>
 
-    <div class="subhead">A nearly unbiased newspaper</div>
-</div>
+        <div class="subhead">A nearly unbiased newspaper</div>
+    </div>
 
     <div class="content">
         <div class="collumns">
