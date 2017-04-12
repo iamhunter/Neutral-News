@@ -25,10 +25,10 @@
             <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
             <header><a href="{% url 'index' %}">Neutral News</a></header>
         </div>
-
+        
         <div class="subhead">A nearly unbiased newspaper</div>
     </div>
-
+    
     <div class="content">
         <div class="collumns">
             {% for Article in article_list %}
@@ -36,11 +36,13 @@
                 <div class="head"><span class="headline hl3"><a href="post/{{ Article.slug }}">{{ Article.title_text }}</a></span><p><span class="headline hl4">by JOHANN WOLFGANG VON GOETHE</span></p></div>
                 <img src="{{ Article.image.url }}"  style='width:100%;' border="0" alt="Null">
                 {{ Article.truth | safe }}
+
             </div>
             {% endfor %}
         </div>
     </div>
-    
+</div>
+
 </body>
 
 </html>
