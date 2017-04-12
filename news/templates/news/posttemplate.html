@@ -3,121 +3,77 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Post Template</title>
-    
+    <title>Neutral News</title>
     <!-- CSS  -->
     {% load static from staticfiles %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <link href="{% static 'news/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <script>
-    $(document).ready(function(){
-        $("#liberalText").hide();
-        $("#conservativeText").hide();
-        $('a[href="#justfacts"]').click(function(){
-            $("#conservativeText").hide();
-            $("#liberalText").hide();   
-        });
-        $('a[href="#conservative"]').click(function(){
-            $("#conservativeText").show();
-            $("#liberalText").hide();
-        });
-        $('a[href="#liberal"]').click(function(){
-            $("#liberalText").show();
-            $("#conservativeText").hide();
-        });
-        $('.button-collapse').sideNav();
-    });
-    </script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'news/js/materialize.js' %}"></script>
+    <script src="{% static 'news/js/init.js' %}"></script>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <title>Newspaper Style Design Experiment</title>
+    <meta name="viewport" content="width=device-width">
 </head>
-<body>
-    <nav class="white menu-bar" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><font color="grey">Neutral</font><font color="red"> News</font></a>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{% url 'admin:index' %}">Admin</a></li>
-                <li><a href="#!">Popular</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">Conservative</a></li>
-                    <li><a href="#!">Liberal</a></li>
-                    <li><a href="#!">Socialist</a></li>
-                    <li><a href="#!">Libertarian</a></li>
-                </ul>
+
+<script>
+$(document).ready(function(){
+    $("#liberalText").hide();
+    $("#conservativeText").hide();
+    $('a[href="#justfacts"]').click(function(){
+        $("#conservativeText").hide();
+        $("#liberalText").hide();   
+    });
+    $('a[href="#conservative"]').click(function(){
+        $("#conservativeText").show();
+        $("#liberalText").hide();
+    });
+    $('a[href="#liberal"]').click(function(){
+        $("#liberalText").show();
+        $("#conservativeText").hide();
+    });
+    $('.button-collapse').sideNav();
+});
+</script>
+
+<div class="head">
+    <div class="headerobjectswrapper">
+        <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
+        <header><a href="{% url 'index' %}">Neutral News</a></header>
+    </div>
+    
+    <div class="subhead">A nearly unbiased newspaper</div>
+</div>
+
+<div class="container-fluid">
+    <h2>{{ article.title_text }}</h2>
+    <img src="{{ article.image.url }}" style='width:100%;' border="0" alt="Null">
+    <div class="chip">
+        {{ article.conservative_author }}
+    </div>
+    <div class="chip">
+        {{ article.liberal_author }}
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="nav nav-pills">
+                <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
+                <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
+                <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
             </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="{% url 'admin:index' %}">Admin</a></li>
-                <li><a href="#!">Popular</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Apply to be a Contributor<i class="material-icons right">arrow_drop_down</i></a></li>
-                <ul id='dropdown2' class='dropdown-content'>
-                    <li><a href="#!">Conservative</a></li>
-                    <li><a href="#!">Liberal</a></li>
-                    <li><a href="#!">Socialist</a></li>
-                    <li><a href="#!">Libertarian</a></li>
-                </ul>
-            </ul>
         </div>
-    </nav>
-    <div class="section container">
-        <h2>{{ article.title_text }}</h2>
-        <img src="{{ article.image.url }}" class="responsive-img">
-        <div class="chip">
-            {{ article.conservative_author }}
-        </div>
-        <div class="chip">
-            {{ article.liberal_author }}
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
-                    <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
-                    <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
-                </ul>
-            </div>
-        </div>
+    </div>
+    <div class="well">
         <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
         <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
         <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
     </div>
 </div>
-<footer class="page-footer grey">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Company Bio</h5>
-                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Connect</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Made by iamhunter with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-        </div>
-    </div>
-</footer>
+</div>
+
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'news/js/materialize.js' %}"></script>
