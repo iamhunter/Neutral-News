@@ -25,7 +25,7 @@ $(document).ready(function(){
     $("#conservativeText").hide();
     $('a[href="#justfacts"]').click(function(){
         $("#conservativeText").hide();
-        $("#liberalText").hide();   
+        $("#liberalText").hide();
     });
     $('a[href="#conservative"]').click(function(){
         $("#conservativeText").show();
@@ -44,7 +44,7 @@ $(document).ready(function(){
         <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
         <header><a href="{% url 'index' %}">Neutral News</a></header>
     </div>
-    
+
     <div class="subhead">A nearly unbiased newspaper</div>
 </div>
 
@@ -66,6 +66,7 @@ $(document).ready(function(){
             </ul>
         </div>
     </div>
+    <br>
     <div class="well">
         <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
         <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
@@ -77,6 +78,6 @@ $(document).ready(function(){
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'news/js/materialize.js' %}"></script>
-<script src="{% static 'news/js/init.js' %}"></script>  
+<script src="{% static 'news/js/init.js' %}"></script>
 </body>
 </html>
