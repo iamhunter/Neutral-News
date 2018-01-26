@@ -40,7 +40,7 @@ $(document).ready(function(){
 </script>
 <div class="head">
     <div class="headerobjectswrapper">
-        <header><a href="{% url 'index' %}">Neutral News</a></header>
+        <header><a href="{% url 'index' %}">N e u t r a l N e w S</a></header>
     </div>
 
     <div class="subhead">A nearly unbiased newspaper</div>
@@ -50,10 +50,18 @@ $(document).ready(function(){
     <h2>{{ article.title_text }}</h2>
     <img src="{{ article.image.url }}" style='width:100%;' border="0" alt="Null">
     <div class="chip">
+      <font color="#BF0A30">
+        <b>
         {{ article.conservative_author }}
+      </b>
+      </font>
     </div>
     <div class="chip">
+      <font color="#002868">
+        <b>
         {{ article.liberal_author }}
+      </b>
+      </font>
     </div>
     <div class="row">
         <div class="col s12">
