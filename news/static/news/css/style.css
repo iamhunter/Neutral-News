@@ -5,13 +5,14 @@ body{
     background-color: White;
 }
 header{
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 200;
     font-size: 80px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     display: inline-block;
     line-height: 72px;
     margin-bottom: 20px;
+    margin-top: 20px;
 
 }
 p{
@@ -80,7 +81,7 @@ a:hover{
 
 }
 
-.collumn + .collumn { 
+.collumn + .collumn {
   border-left: 1px solid #e2e2e2;
 }
 .collumn .headline{
@@ -154,7 +155,6 @@ a:hover{
     height: 10px;
     display: block;
     margin: 0 auto;
-
 }
 
 .collumn .headline.hl5{
