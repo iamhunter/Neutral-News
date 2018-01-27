@@ -7,5 +7,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^about/', views.about, name='about'),
     url(r'^post/(?P<slug>[\w-]+)/$', views.post, name='post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
