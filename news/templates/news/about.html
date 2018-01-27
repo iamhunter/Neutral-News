@@ -36,21 +36,3 @@
       <a href="{% url 'about' %}">About</a>  |  Popular  |  Categories  | Search
     </h4>
   </div>
-
-  <div class="content">
-    <div class="collumns">
-      {% for Article in article_list %}
-      <div class="collumn">
-        <div class="head"><span class="headline hl3"><a href="post/{{ Article.slug }}">{{ Article.title_text }}</a></span><p><span class="headline hl4">by {{Article.conservative_author}} and {{Article.liberal_author}}</span></p></div>
-        <a href="post/{{ Article.slug }}"><img src="{{ Article.image.url }}"  style='width:100%;' border="0" alt="Null"></a>
-        <br><br>
-        {{ Article.preview | safe }}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-</body>
-
-</html>

@@ -1,6 +1,6 @@
 language: python
 python:
-    
+
     - "3.4"
     - "3.5"
     - "3.5-dev" # 3.5 development branch
@@ -12,16 +12,16 @@ python:
 #install: "pip install -r requirements.txt"
 
 env:
-    - DJANGO_VERSION=1.10
+    - DJANGO_VERSION=2.0.1
 
 install:
     - pip install -q Django==$DJANGO_VERSION
     - pip install -r requirements.txt
     - pip install codecov
 
-script: 
+script:
     - python manage.py test
     - coverage run --source='.' manage.py test news
 
-after_success: 
+after_success:
     - codecov
