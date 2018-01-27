@@ -285,6 +285,12 @@ a:hover{
     border-left: none;
     border-bottom: 1px solid #2f2f2f;
   }
+  .container-fluid {
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 100%
+  }
+
   header{
     max-width: 320px;
     font-size: 60px;
