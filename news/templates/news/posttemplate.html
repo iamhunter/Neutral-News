@@ -60,14 +60,14 @@ $(document).ready(function(){
     <h2>{{ article.title_text }}</h2>
     <img src="{{ article.image.url }}" style='width:100%;' border="0" alt="Null">
     <div class="chip">
-      <font color="#BF0A30">
+      <font color="#731646">
         <b>
         {{ article.conservative_author }}
       </b>
       </font>
     </div>
     <div class="chip">
-      <font color="#002868">
+      <font color="#4C1C52">
         <b>
         {{ article.liberal_author }}
       </b>
@@ -88,8 +88,8 @@ $(document).ready(function(){
         <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
         <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
     </div>
-
     <div id="disqus_thread"></div>
+    
 <script>
 
 /**
@@ -113,10 +113,6 @@ s.setAttribute('data-timestamp', +new Date());
 
 </div>
 </div>
-
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{% static 'news/js/materialize.js' %}"></script>
-<script src="{% static 'news/js/init.js' %}"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a70d14bb26287ef"></script> 
 </body>
 </html>
