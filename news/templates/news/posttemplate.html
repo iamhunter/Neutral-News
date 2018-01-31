@@ -1,113 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>{{ article.title_text }}</title>
-    <!-- CSS  -->
-    {% load static from staticfiles %}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="{% static 'news/js/materialize.js' %}"></script>
-    <script src="{% static 'news/js/init.js' %}"></script>
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic|Cinzel+Decorative' rel='stylesheet' type='text/css'>
-    <title>Neutral News</title>
-    <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>{{ article.title_text }}</title>
+  <!-- CSS  -->
+  {% load static from staticfiles %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic|Cinzel+Decorative' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
+  <title>Neutral News</title>
+  <meta name="viewport" content="width=device-width">
 </head>
 
-<script>
-$(document).ready(function(){
-    $("#liberalText").hide();
-    $("#conservativeText").hide();
-    $('a[href="#justfacts"]').click(function(){
-        $("#conservativeText").hide();
-        $("#liberalText").hide();
-    });
-    $('a[href="#conservative"]').click(function(){
-        $("#conservativeText").show();
-        $("#liberalText").hide();
-    });
-    $('a[href="#liberal"]').click(function(){
-        $("#liberalText").show();
-        $("#conservativeText").hide();
-    });
-    $('.button-collapse').sideNav();
-});
-</script>
-
 <div class="head">
-    <div class="headerobjectswrapper">
-        <header>
-            <a href="{% url 'index' %}">
-                <font color="#002868">N</font><font color="#132562">e</font><font color="#26225D">u</font><font color="#391F57">t</font><font color="#4C1C52">r</font><font color="#60194C">a</font><font color="#731646">l</font>
-                <font color="#861341">N</font><font color="#99103B">e</font><font color="#AC0D36">w</font><font color="#BF0A30">S</font>
-            </a>
-        </header>
-    </div>
-    <div class="subhead">A nearly unbiased newspaper</div>
+  <div class="headerobjectswrapper">
+    <header>
+      <a href="{% url 'index' %}">
+        <font color="#002868">N</font><font color="#132562">e</font><font color="#26225D">u</font><font color="#391F57">t</font><font color="#4C1C52">r</font><font color="#60194C">a</font><font color="#731646">l</font>
+        <font color="#861341">N</font><font color="#99103B">e</font><font color="#AC0D36">w</font><font color="#BF0A30">S</font>
+      </a>
+    </header>
+  </div>
+  <div class="subhead">A nearly unbiased newspaper</div>
 </div>
 <div class="head topbar">
-    <h4>
-        <a href="{% url 'about' %}">About</a>  |  Popular  |  Categories  | Search
-    </h4>
+  <h4>
+    <a href="{% url 'about' %}">About</a>  |  Popular  |  Categories  | Search
+  </h4>
 </div>
 
 <div class="container-fluid">
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_relatedposts_inline"></div>
-    <h2>{{ article.title_text }}</h2>
-    <img src="{{ article.image.url }}" style='width:100%;' border="0" alt="Null">
-    <div class="chip">
-        <font color="#731646">
-            <b>
-                {{ article.conservative_author }}
-            </b>
-        </font>
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_relatedposts_inline"></div>
+  <h2>{{ article.title_text }}</h2>
+  <img src="{{ article.image.url }}" style='width:100%;' border="0" alt="Null">
+  <div class="chip">
+    <font color="#731646">
+      <b>
+        {{ article.conservative_author }}
+      </b>
+    </font>
+  </div>
+  <div class="chip">
+    <font color="#4C1C52">
+      <b>
+        {{ article.liberal_author }}
+      </b>
+    </font>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <ul class="nav nav-pills">
+        <li class="tab col"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
+        <li class="tab col"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
+        <li class="tab col"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
+      </ul>
     </div>
-    <div class="chip">
-        <font color="#4C1C52">
-            <b>
-                {{ article.liberal_author }}
-            </b>
-        </font>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <ul class="nav nav-pills">
-                <li class="tab col s4"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
-                <li class="tab col s4"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
-                <li class="tab col s4"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
-            </ul>
-        </div>
-    </div>
-    <br>
-    <div class="well">
-        <a id="truthText" class="col s12 black-text">{{ article.truth | safe }}</a>
-        <a id="conservativeText" class="col s12 materialize-red-text">{{ article.conservative_opinion | safe }}</a>
-        <a id="liberalText" class="col s12 indigo-text"> {{ article.liberal_opinion | safe }} </a>
-    </div>
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_relatedposts_inline"></div>
-    
-    <div id="disqus_thread"></div>
-    <script>
-    
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    
-    var disqus_config = function () {
-        //this.page.url = '{{ article.slug }}';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = '{{ article.slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://neutral-news.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+  </div>
+  <br>
+  <div class="well">
+    <a id="truthText" class="col s12">{{ article.truth | safe }}</a>
+    <a id="conservativeText" class="col s12">{{ article.conservative_opinion | safe }}</a>
+    <a id="liberalText" class="col s12"> {{ article.liberal_opinion | safe }} </a>
+  </div>
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_relatedposts_inline"></div>
+
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+  var disqus_config = function () {
+    //this.page.url = '{{ article.slug }}';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{ article.slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://neutral-news.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -117,5 +94,24 @@ $(document).ready(function(){
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a70d14bb26287ef"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+  $("#liberalText").hide();
+  $("#conservativeText").hide();
+  $('a[href="#justfacts"]').click(function(){
+    $("#conservativeText").hide();
+    $("#liberalText").hide();
+  });
+  $('a[href="#conservative"]').click(function(){
+    $("#conservativeText").show();
+    $("#liberalText").hide();
+  });
+  $('a[href="#liberal"]').click(function(){
+    $("#liberalText").show();
+    $("#conservativeText").hide();
+  });
+});
+</script>
 </body>
 </html>
