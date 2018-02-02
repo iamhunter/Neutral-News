@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Olde English';
-  src: url('../static/news/fonts/OldeEnglish.ttf');
-  src: local('../static/news/fonts/OldeEnglish.ttf')
+  src: url('../fonts/OldeEnglish.ttf');
+  src: local('../fonts/OldeEnglish.ttf')
 }
 hr {
   margin-top: 20px;
