@@ -67,10 +67,10 @@
       </div>
     </div>
     <br>
-    <div class="well">
-      <a id="truthText" class="col s12"><div class="articleindicator">Just Facts</div>{{ article.truth | safe }}</a>
-      <a id="conservativeText" class="col s12"><hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}</a>
-      <a id="liberalText" class="col s12"><hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }} </a>
+    <div class="well articletext">
+      <a id="truthText"><div class="articleindicator">Just Facts</div>{{ article.truth | safe }}</a>
+      <a id="conservativeText"><hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}</a>
+      <a id="liberalText"><hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }} </a>
     </div>
     <div class="sharingbuttons">
       <!-- Sharingbutton Facebook -->
