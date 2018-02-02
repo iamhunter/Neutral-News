@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic|Cinzel+Decorative' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/sharing.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
@@ -57,20 +56,22 @@
         </b>
       </font>
     </div>
-    <div class="row">
-      <div class="col s12">
-        <ul class="nav nav-pills">
-          <li class="tab col"><a href="#justfacts" class="active grey-text">Just the Facts</a></li>
-          <li class="tab col"><a href="#conservative"class="red-text">Conservative Commentary</a></li>
-          <li class="tab col"><a href="#liberal" class="indigo-text">Liberal Commentary</a></li>
-        </ul>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#justfacts">Just the Facts</a></li>
+      <li><a data-toggle="tab" href="#conservative">Conservative Commentary</a></li>
+      <li><a data-toggle="tab" href="#liberal">Liberal Commentary</a></li>
+    </ul>
+    <div class="well articletext tab-content">
+      <div id="justfacts" class="tab-pane fade in active">
+        <div class="articleindicator">Just Facts</div>{{ article.truth | safe }}
       </div>
-    </div>
-    <br>
-    <div class="well articletext">
-      <a id="truthText"><div class="articleindicator">Just Facts</div>{{ article.truth | safe }}</a>
-      <a id="conservativeText"><hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}</a>
-      <a id="liberalText"><hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }} </a>
+      <div id="conservative" class="tab-pane fade">
+      <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}
+      </div>
+      <div id="liberal" class="tab-pane fade">
+        <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }}
+      </div>
     </div>
     <div class="sharingbuttons">
       <!-- Sharingbutton Facebook -->
@@ -135,29 +136,11 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-
 </div>
 </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>
-$(document).ready(function(){
-  $("#liberalText").hide();
-  $("#conservativeText").hide();
-  $('a[href="#justfacts"]').click(function(){
-    $("#conservativeText").hide();
-    $("#liberalText").hide();
-  });
-  $('a[href="#conservative"]').click(function(){
-    $("#conservativeText").show();
-    $("#liberalText").hide();
-  });
-  $('a[href="#liberal"]').click(function(){
-    $("#liberalText").show();
-    $("#conservativeText").hide();
-  });
-});
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -53,6 +53,12 @@ a:hover{
   text-decoration: none;
 }
 
+#floating_sidebar {
+ position:fixed;
+ left: 25px;
+ top: 25%; /* change to adjust height from the top of the page */
+}
+
 .articleindicator{
   font-size: 12px;
   color: #aaa;
