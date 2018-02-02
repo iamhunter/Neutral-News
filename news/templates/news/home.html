@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="{% static 'news/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'news/css/sharing.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
   <title>Neutral News</title>
 </head>
@@ -19,13 +20,18 @@
   <div class="head">
     <div class="headerobjectswrapper">
       <header>
-        <a href="{% url 'index' %}">
-          <font color="#002868">N</font><font color="#132562">e</font><font color="#26225D">u</font><font color="#391F57">t</font><font color="#4C1C52">r</font><font color="#60194C">a</font><font color="#731646">l</font>
-          <font color="#861341">N</font><font color="#99103B">e</font><font color="#AC0D36">w</font><font color="#BF0A30">S</font>
-        </a>
+        <a href="{% url 'index' %}">The Neutral News</a>
       </header>
     </div>
-    <div class="subhead">A nearly unbiased newspaper</div>
+    <div class="subhead" >
+      <table style="width:100%">
+        <tr>
+          <td style="width:33%">1 FEBRUARY 2017</td>
+          <td style="width:33%">A nearly unbiased newspaper</td>
+          <td style="width:33%">VOLUME 1</td>
+        </tr>
+      </table>
+    </div>
   </div>
   <div class="head topbar">
     <h4>
