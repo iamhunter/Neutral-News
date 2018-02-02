@@ -1,19 +1,24 @@
+@font-face {
+  font-family: 'Olde English';
+  src: url('../static/news/fonts/OldeEnglish.ttf');
+  src: local('../static/news/fonts/OldeEnglish.ttf')
+}
+
 body{
   font-family: 'Droid Serif', serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #2f2f2f;
   background-color: White;
 }
 header{
-  font-family: 'Cinzel Decorative', serif;
-  font-weight: 200;
+  font-family: 'Olde English', serif;
+  font-weight: 400;
   font-size: 80px;
   /*text-transform: uppercase;*/
   display: inline-block;
   line-height:  72px;
   margin-bottom: 20px;
   margin-top: 20px;
-
 }
 p{
   margin-top: 0;
@@ -32,8 +37,16 @@ a:hover{
 .head{
   text-align: center;
   position: relative;
-
-
+}
+h2{
+  line-height: normal;
+  font-family: 'Playfair Display', serif;
+  display: block;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 36px;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
 }
 
 .headerobjectswrapper{
@@ -44,8 +57,9 @@ a:hover{
   border-bottom: 2px solid #2f2f2f;
   border-top: 2px solid #2f2f2f;
   padding: 12px 0 12px 0;
-
+  font-size: 14px;
 }
+
 .weatherforcastbox{
   position: relative;
   width: 12%;
@@ -264,10 +278,22 @@ a:hover{
     display: none;
   }
 
+  .container-fluid {
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 60%
+  }
+
 }
 @media only all and (max-width: 1200px) {
   .collumn{
     width: 33%;
+  }
+
+  .container-fluid {
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 75%
   }
 
 }
@@ -275,9 +301,20 @@ a:hover{
   .collumn{
     width: 47%;
   }
+  .container-fluid {
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 80%
+  }
 
 }
 @media only all and (max-width: 650px) {
+  .subhead{
+    font-size: 10px;
+  }
+  .sharingbuttons{
+    text-align: center;
+  }
   .collumn{
     width: 100%;
   }
@@ -291,8 +328,8 @@ a:hover{
     width: 100%
   }
 
+
   header{
-    max-width: 320px;
     font-size: 60px;
     overflow: hidden;
   }
