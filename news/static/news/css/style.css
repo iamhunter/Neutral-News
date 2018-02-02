@@ -3,6 +3,12 @@
   src: url('../static/news/fonts/OldeEnglish.ttf');
   src: local('../static/news/fonts/OldeEnglish.ttf')
 }
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #e3e3e3;
+}
 
 body{
   font-family: 'Droid Serif', serif;
@@ -10,6 +16,7 @@ body{
   color: #2f2f2f;
   background-color: White;
 }
+
 header{
   font-family: 'Olde English', serif;
   font-weight: 400;
@@ -20,24 +27,12 @@ header{
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 p{
   margin-top: 0;
   margin-bottom: 20px;
 }
-a {
-  color:black;
-  text-decoration: none;
-}
 
-a:hover{
-  color:black;
-  text-decoration: none;
-}
-
-.head{
-  text-align: center;
-  position: relative;
-}
 h2{
   line-height: normal;
   font-family: 'Playfair Display', serif;
@@ -48,6 +43,36 @@ h2{
   box-sizing: border-box;
   padding: 10px 0 10px 0;
 }
+
+a {
+  color:black;
+  text-decoration: none;
+}
+
+a:hover{
+  color:black;
+  text-decoration: none;
+}
+
+.articleindicator{
+  font-size: 12px;
+  color: #ccc;
+}
+
+.conservativearticleindicator{
+  font-size: 12px;
+  color: #a94442;
+}
+
+.liberalarticleindicator{
+  font-size: 12px;
+  color: #337ab7;
+}
+.head{
+  text-align: center;
+  position: relative;
+}
+
 
 .headerobjectswrapper{
 }
