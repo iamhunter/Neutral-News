@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <!-- CSS  -->
+  {% load static from staticfiles %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic|Cinzel+Decorative' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'news/css/sharing.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
+</head>
+<body>
+
+  <div class="head">
+    <div class="headerobjectswrapper">
+      <header>
+        <a href="{% url 'index' %}">The Neutral News</a>
+      </header>
+    </div>
+    <div class="subhead" >
+      <table style="width:100%">
+        <tr>
+          <td style="width:33%" id="date"></td>
+          <td style="width:33%">A nearly unbiased newspaper</td>
+          <td style="width:33%">VOLUME 1</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="head topbar">
+    <h4>
+      <a href="{% url 'about' %}">About</a>  |  Popular  |  Categories  | Search
+    </h4>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+  var d = new Date();
+  document.getElementById("date").innerHTML = d;
+  function formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
+  document.getElementById("date").innerHTML = formatDate(new Date());
+</script>
+<script>
+/*
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+  //this.page.url = '{{ article.slug }}';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '{{ article.slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://neutral-news.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+// Cache selectors outside callback for performance.
+$(window).bind("load", function() {
+  var $window = $(window),
+  $stickyEl = $('#the-sticky-div'),
+  elTop = $stickyEl.offset().top;
+  $window.scroll(function() {
+    $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+  })});
+</script>
+</body>
+
+</html>

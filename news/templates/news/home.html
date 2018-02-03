@@ -1,58 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Neutral News</title>
-  <!-- CSS  -->
-  {% load static from staticfiles %}
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic|Cinzel+Decorative' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="{% static 'news/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{% static 'news/css/sharing.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="shortcut icon" type="image/png" href="{% static 'news/images/favicon.ico' %}"/>
-  <title>Neutral News</title>
-</head>
-<body>
+{% extends 'news/base.html' %}
 
-  <div class="head">
-    <div class="headerobjectswrapper">
-      <header>
-        <a href="{% url 'index' %}">The Neutral News</a>
-      </header>
-    </div>
-    <div class="subhead" >
-      <table style="width:100%">
-        <tr>
-          <td style="width:33%">1 FEBRUARY 2017</td>
-          <td style="width:33%">A nearly unbiased newspaper</td>
-          <td style="width:33%">VOLUME 1</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="head topbar">
-    <h4>
-      <a href="{% url 'about' %}">About</a>  |  Popular  |  Categories  | Search
-    </h4>
-  </div>
+{% block content %}
 
-  <div class="content">
-    <div class="collumns">
-      {% for Article in article_list %}
-      <div class="collumn">
-        <div class="head"><span class="headline hl3"><a href="post/{{ Article.slug }}">{{ Article.title_text }}</a></span><p><span class="headline hl4">by {{Article.conservative_author}} and {{Article.liberal_author}}</span></p></div>
-        <a href="post/{{ Article.slug }}"><img src="{{ Article.image.url }}"  style='width:100%;' border="0" alt="Null"></a>
-        <br><br>
-        {{ Article.preview | safe }}
-      </div>
-      {% endfor %}
+<title> Neutral News </title>
+<div class="content">
+  <div class="collumns">
+    {% for Article in article_list %}
+    <div class="collumn">
+      <div class="head"><span class="headline hl3"><a href="post/{{ Article.slug }}">{{ Article.title_text }}</a></span><p><span class="headline hl4">by {{Article.conservative_author}} and {{Article.liberal_author}}</span></p></div>
+      <a href="post/{{ Article.slug }}"><img src="{{ Article.image.url }}"  style='width:100%;' border="0" alt="Null"></a>
+      <br><br>
+      {{ Article.preview | safe }}
     </div>
+    {% endfor %}
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
 
-</html>
+{% endblock %}
