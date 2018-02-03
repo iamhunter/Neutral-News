@@ -57,17 +57,19 @@
       </font>
     </div>
 
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#justfacts">Just the Facts</a></li>
-      <li><a data-toggle="tab" href="#conservative">Conservative Commentary</a></li>
-      <li><a data-toggle="tab" href="#liberal">Liberal Commentary</a></li>
-    </ul>
+    <div id="the-sticky-div" background-color="white">
+      <ul class="nav nav-tabs ">
+        <li class="active"><a data-toggle="tab" class="nav-item nav-link" href="#justfacts">Just the Facts</a></li>
+        <li><a data-toggle="tab" class="nav-item nav-link" href="#conservative">Conservative Commentary</a></li>
+        <li><a data-toggle="tab" class="nav-item nav-link" href="#liberal">Liberal Commentary</a></li>
+      </ul>
+    </div>
     <div class="well articletext tab-content">
       <div id="justfacts" class="tab-pane fade in active">
         <div class="articleindicator">Just Facts</div>{{ article.truth | safe }}
       </div>
       <div id="conservative" class="tab-pane fade">
-      <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}
+        <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}
       </div>
       <div id="liberal" class="tab-pane fade">
         <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }}
@@ -137,10 +139,21 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-</div>
-
-</body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+// Cache selectors outside callback for performance.
+$(window).bind("load", function() {
+var $window = $(window),
+$stickyEl = $('#the-sticky-div'),
+elTop = $stickyEl.offset().top;
+
+$window.scroll(function() {
+  $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+})});
+
+</script>
+</body>
 </body>
 </html>

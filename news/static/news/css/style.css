@@ -53,11 +53,31 @@ a:hover{
   text-decoration: none;
 }
 
-#floating_sidebar {
- position:fixed;
- left: 25px;
- top: 25%; /* change to adjust height from the top of the page */
+#the-sticky-div.sticky {
+   position: fixed;
+   top: 0;
+   background-color: white;
+   width: inherit;
 }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #f5f5f5;;
+    border: 1px solid #ddd;
+        border-bottom-color: rgb(221, 221, 221);
+    border-bottom-color: transparent;
+}
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border-radius: 4px 4px 0 0;
+    background-color: white;
+  }
+
+  .nav-item{
+    font-size: 14px;
+  }
 
 .articleindicator{
   font-size: 12px;
@@ -119,7 +139,9 @@ a:hover{
 }
 
 .container-fluid{
-  width: 75%
+  width: 50%;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 .collumns{
 
@@ -317,9 +339,7 @@ a:hover{
   }
 
   .container-fluid {
-    padding-right: 5%;
-    padding-left: 5%;
-    width: 60%
+    width: 50%
   }
 
 }
@@ -329,9 +349,7 @@ a:hover{
   }
 
   .container-fluid {
-    padding-right: 5%;
-    padding-left: 5%;
-    width: 75%
+    width: 65%
   }
 
 }
@@ -340,9 +358,10 @@ a:hover{
     width: 47%;
   }
   .container-fluid {
-    padding-right: 5%;
-    padding-left: 5%;
-    width: 80%
+    width: 70%
+  }
+  .nav-item{
+    font-size: 10px;
   }
 
 }
@@ -361,10 +380,9 @@ a:hover{
     border-bottom: 1px solid #2f2f2f;
   }
   .container-fluid {
-    padding-right: 5%;
-    padding-left: 5%;
-    width: 100%
+    width: 90%
   }
+
 
 
   header{
