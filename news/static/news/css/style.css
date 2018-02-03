@@ -53,6 +53,17 @@ a:hover{
   text-decoration: none;
 }
 
+#the-sticky-div-container {
+  height: 62px;
+  width: inherit;
+}
+
+
+#the-sticky-div {
+  background-color: white;
+  width: 200%;
+}
+
 #the-sticky-div.sticky {
    position: fixed;
    top: 0;
@@ -133,7 +144,7 @@ a:hover{
   line-height: 0;
   word-spacing: -.31em;
   display: inline-block;
-  margin: 30px 2% 0 2%;
+  margin: 10px 2% 0 2%;
 
 
 }
@@ -360,9 +371,7 @@ a:hover{
   .container-fluid {
     width: 70%
   }
-  .nav-item{
-    font-size: 10px;
-  }
+
 
 }
 @media only all and (max-width: 650px) {
@@ -382,9 +391,13 @@ a:hover{
   .container-fluid {
     width: 90%
   }
-
-
-
+  .nav-item{
+    font-size: 10px;
+  }
+  #the-sticky-div-container {
+    height: 50px;
+    width: inherit;
+  }
   header{
     font-size: 60px;
     overflow: hidden;
