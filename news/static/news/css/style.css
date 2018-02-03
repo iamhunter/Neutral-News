@@ -393,7 +393,6 @@ a:hover{
   }
   .collumn + .collumn {
     border-left: none;
-    border-bottom: 1px solid #2f2f2f;
   }
   .container-fluid {
     width: 90%
