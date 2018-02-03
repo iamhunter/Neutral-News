@@ -57,13 +57,16 @@
       </font>
     </div>
 
+    <div id="the-sticky-div-container">
     <div id="the-sticky-div" background-color="white">
-      <ul class="nav nav-tabs ">
-        <li class="active"><a data-toggle="tab" class="nav-item nav-link" href="#justfacts">Just the Facts</a></li>
-        <li><a data-toggle="tab" class="nav-item nav-link" href="#conservative">Conservative Commentary</a></li>
-        <li><a data-toggle="tab" class="nav-item nav-link" href="#liberal">Liberal Commentary</a></li>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" class="nav-item nav-link" href="#justfacts">Just<br> The Facts</a></li>
+        <li><a data-toggle="tab" class="nav-item nav-link" href="#conservative">Conservative<br>Commentary</a></li>
+        <li><a data-toggle="tab" class="nav-item nav-link" href="#liberal">Liberal<br>Commentary</a></li>
       </ul>
     </div>
+  </div>
+
     <div class="well articletext tab-content">
       <div id="justfacts" class="tab-pane fade in active">
         <div class="articleindicator">Just Facts</div>{{ article.truth | safe }}
