@@ -31,18 +31,9 @@ class Article(models.Model):
     conservative_author = models.ForeignKey(ConservativeAuthor, on_delete=models.CASCADE)
     liberal_author = models.ForeignKey(LiberalAuthor, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=140, unique=True)
     preview = models.TextField()
     truth = models.TextField()
     conservative_opinion = models.TextField()
     liberal_opinion = models.TextField()
     pub_date = models.DateTimeField('date published')
-
-    def __str__(self):
-        return self.title_text
-
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
-    was_published_recently.admin_order_field = 'pub_date'
-    was_published_recently.boolean = True
