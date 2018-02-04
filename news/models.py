@@ -30,7 +30,7 @@ class Article(models.Model):
     image = models.ImageField()
     conservative_author = models.ForeignKey(ConservativeAuthor, on_delete=models.CASCADE)
     liberal_author = models.ForeignKey(LiberalAuthor, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
     slug = models.SlugField(max_length=100, unique=True)
     preview = models.TextField()
     truth = models.TextField()
