@@ -5,7 +5,7 @@ from .models import Article
 
 
 def index(request):
-    article_list = Article.objects.order_by('-pub_date')
+    article_list = Article.objects.order_by('-created_at')
     context = {'article_list' : article_list}
     return render(request, 'news/home.html', context)
 
