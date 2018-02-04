@@ -22,13 +22,13 @@
 
   <div class="well articletext tab-content">
     <div id="justfacts" class="tab-pane fade in active">
-      <div class="articleindicator">Just Facts</div>{{ article.truth | safe }}
+      <div class="articleindicator">Just Facts</div>{{ article.truth | safe | linebreaksbr }}
     </div>
     <div id="conservative" class="tab-pane fade">
-      <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe }}
+      <div class="articleindicator">Just Facts</div>{{ article.truth | safe | linebreaksbr }} <hr><div class="conservativearticleindicator">Conservative Commentary</div>{{ article.conservative_opinion | safe | linebreaksbr }}
     </div>
     <div id="liberal" class="tab-pane fade">
-      <div class="articleindicator">Just Facts</div>{{ article.truth | safe }} <hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | safe }}
+      <div class="articleindicator">Just Facts</div>{{ article.truth | safe | linebreaksbr }} <hr><div class="liberalarticleindicator">Liberal Commentary</div>{{ article.liberal_opinion | linebreaksbr }}
     </div>
   </div>
   <div class="sharingbuttons">
