@@ -7,3 +7,4 @@ from .models import *
 admin.site.register(Article)
 admin.site.register(ConservativeAuthor)
 admin.site.register(LiberalAuthor)
+admin.site.register(Category)
