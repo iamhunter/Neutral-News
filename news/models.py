@@ -36,4 +36,12 @@ class Article(models.Model):
     truth = models.TextField()
     conservative_opinion = models.TextField()
     liberal_opinion = models.TextField()
-    pub_date = models.DateTimeField('date published')
+    created     = models.DateTimeField(editable=False)
+    modified    = models.DateTimeField()
+
+    def save(self, *args, **kwargs):
+        ''' On save, update timestamps '''
+        if not self.id:
+            self.created = timezone.now()
+        self.modified = timezone.now()
+        return super(User, self).save(*args, **kwargs)
